@@ -1,0 +1,1 @@
+ Scaffold-DbContext "Data Source=localhost;Initial Catalog=eProdaja; user=sa; password=test; TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer -NoPluralize -ContextDir "Database" -OutputDir "Entities" -Namespace "eProdaja.Infrastructure.Entities" -ContextNamespace "eProdaja.Infrastructure.Database"
