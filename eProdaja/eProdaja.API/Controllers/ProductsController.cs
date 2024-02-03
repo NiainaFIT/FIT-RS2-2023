@@ -1,4 +1,3 @@
-using eProdaja.Model;
 using eProdaja.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,17 +9,18 @@ namespace eProdaja.API.Controllers
     {
         
         private readonly ILogger<ProductsController> _logger;
-        private readonly IProductsService _productsService;
-        public ProductsController(ILogger<ProductsController> logger, IProductsService productsService)
+        private readonly IProizvodiService _productsService;
+        public ProductsController(ILogger<ProductsController> logger, IProizvodiService productsService)
         {
             _logger = logger;
             _productsService = productsService;
         }
 
-        [HttpGet(Name = "GetProducts")]
-        public IEnumerable<Products> Get()
+        [HttpGet(Name = "GetProizvodi")]
+        public async Task<IEnumerable<Model.Proizvodi>> Get()
         {
-           return _productsService.Get();
+           var result = await _productsService.Get();
+            return result;
         }
     }
 }
